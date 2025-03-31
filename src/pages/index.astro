@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Stack from "@/sections/Stack.astro";
+import Proyects from "@/sections/Proyects.astro";
+
+import AcademicTimeline from "@/sections/AcademicTimeline.astro";
+import Chip from "@/components/ui/Chip.astro";
+import Svg from "@/components/ui/Svg.astro";
+
+import { socialMedia } from "@/data";
+import Experience from "@/sections/Experience.astro";
+---
+
+<Layout title="Fabian Vargas">
+	<h1>
+		Welcome, I'm <span class="text-gradient">Fabian Vargas</span>
+	</h1>
+
+	<section class="aboutme">
+		<p>
+			Web developer with hands-on experience in diverse technologies, focusing
+			on mastering the essentials for seamless web functionality. My expertise
+			shines in <span class="text-gradient"
+				>React, NextJS, NestJS, and PostgreSQL</span
+			>.
+		</p>
+
+		<p>"All with <span class="text-gradient">TypeScript</span> is better" ☕</p>
+	</section>
+
+	<span class="chip-group">
+		{
+			socialMedia.map((social) => (
+				<Chip href={social.href} target={social.target}>
+					<Svg src={social.icon} slot="before" alt={social.text} />
+					{social.text}
+				</Chip>
+			))
+		}
+	</span>
+
+	<span class="chip-group">
+		<Chip type="soft">
+			<Svg
+				src="/circle.svg"
+				slot="before"
+				alt=""
+				fill="rgb(var(--complementary))"
+				size={10}
+			/>
+			Available to work
+		</Chip>
+		<Chip type="soft">
+			<Svg
+				src="/circle.svg"
+				slot="before"
+				alt=""
+				fill="rgb(var(--complementary))"
+				size={10}
+			/>
+			Studing Computer Science
+		</Chip>
+	</span>
+
+	<Proyects client />
+	<Experience />
+	<AcademicTimeline />
+	<Stack />
+</Layout>
+
+<style>
+	.chip-group {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	section {
+		margin-top: 3.5rem;
+	}
+
+	section.aboutme {
+		a {
+			font-size: smaller;
+			color: #8b8989;
+		}
+	}
+</style>

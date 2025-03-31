@@ -1,0 +1,46 @@
+<div class="timeline-item">
+  <div class="timeline-point"></div>
+  <div class="timeline-item-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .timeline-point {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(var(--accent-light));
+    border-radius: 50%;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+  }
+
+  /* .timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .timeline-item-content {
+    background-color: rgb(var(--bg-color));
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(var(--fg-color), 0.1);
+    width: 100%;
+  }
+</style>

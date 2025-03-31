@@ -1,0 +1,46 @@
+[
+  {
+    "company": "Tech Solutions",
+    "position": "Frontend Developer",
+    "startDate": "2021/06/01",
+    "endDate": "2023/05/01",
+    "summary": "Developed and maintained user interfaces using modern technologies like React.js and Vue.js, improving user experience and optimizing application performance.",
+    "highlights": [
+      "Implemented a reusable component architecture in React.js.",
+      "Reduced page load times by 30% through image and resource optimization techniques."
+    ]
+  },
+  {
+    "company": "Digital Web Agency",
+    "position": "Full Stack Developer",
+    "startDate": "2019/09/01",
+    "endDate": "2021/05/01",
+    "summary": "Developed complete web applications using Node.js on the backend and Angular on the frontend, integrating NoSQL databases like MongoDB.",
+    "highlights": [
+      "Built a secure authentication system using JWT and OAuth.",
+      "Optimized backend performance, reducing API response times by 40%."
+    ]
+  },
+  {
+    "company": "Innovatech Corp",
+    "position": "Backend Developer",
+    "startDate": "2017/03/01",
+    "endDate": "2019/08/01",
+    "summary": "Developed and maintained scalable microservices using Node.js and Express, integrated with relational databases like MySQL.",
+    "highlights": [
+      "Designed a RESTful API for user management, improving system scalability.",
+      "Implemented automated testing, increasing code coverage by 50%."
+    ]
+  },
+  {
+    "company": "Web Dynamics",
+    "position": "UI/UX Designer & Developer",
+    "startDate": "2015/07/01",
+    "endDate": "2017/02/01",
+    "summary": "Designed intuitive and visually appealing web interfaces, improving accessibility and user experience, and developed the frontend using HTML5, CSS3, and JavaScript.",
+    "highlights": [
+      "Created a responsive design system to ensure consistency across multiple platforms.",
+      "Collaborated with the marketing team to optimize conversion rates through A/B testing."
+    ]
+  }
+]

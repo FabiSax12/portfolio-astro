@@ -1,0 +1,62 @@
+[
+  {
+    "src": "/typescript.svg",
+    "alt": "TypeScript",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/nodejs.svg",
+    "alt": "NodeJS",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/nestjs.svg",
+    "alt": "NestJS",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/react.svg",
+    "alt": "React",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/nextjs.svg",
+    "alt": "NextJS",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/astro.svg",
+    "alt": "Astro",
+    "learning": false,
+    "tool": false
+  },
+  {
+    "src": "/git.svg",
+    "alt": "Git",
+    "learning": false,
+    "tool": true
+  },
+  {
+    "src": "/docker.svg",
+    "alt": "Docker",
+    "learning": true,
+    "tool": true
+  },
+  {
+    "src": "/postgres.svg",
+    "alt": "PostgreSQL",
+    "learning": true,
+    "tool": false
+  },
+  {
+    "src": "/github2.svg",
+    "alt": "GitHub",
+    "learning": false,
+    "tool": true
+  }
+]

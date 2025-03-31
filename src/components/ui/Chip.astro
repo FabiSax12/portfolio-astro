@@ -1,0 +1,43 @@
+---
+interface Props {
+  href?: string;
+  target?: string;
+  type?: "soft" | "gradient";
+}
+
+const { href, target, type = "gradient" } = Astro.props;
+---
+
+<a class={`chip ${type}`} href={href} target={target}>
+  <slot name="before" />
+  <slot />
+  <slot name="after" />
+</a>
+
+<style>
+  .chip {
+    width: max-content;
+    padding: 0 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    font-size: smaller !important;
+    border-radius: 1rem;
+
+    &.gradient {
+      color: rgb(var(--bg-color));
+      background-image: var(--accent-gradient);
+      background-size: 400%;
+      background-position: 0%;
+    }
+
+    &.soft {
+      color: rgb(var(--complementary-dark));
+      background-color: rgb(var(--complementary-light));
+      border-radius: 5px;
+    }
+  }
+</style>

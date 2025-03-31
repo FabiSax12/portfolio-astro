@@ -1,0 +1,88 @@
+---
+import BentoGrid from "@/layouts/BentoGrid.astro";
+import BentoSpace from "@/components/ui/BentoSpace.astro";
+import Svg from "@/components/ui/Svg.astro";
+import { stack } from "@/data";
+---
+
+<section id="techstack" class="techstack">
+  <h2>Stack</h2>
+  <BentoGrid cols={3} rows={2}>
+    <BentoSpace
+      title="Main Stack"
+      col={{ start: 1, end: 3 }}
+      row={{ start: 1, end: 2 }}
+    >
+      <div class="flex">
+        {
+          stack.map(
+            (tech) =>
+              !tech.learning &&
+              !tech.tool && <Svg src={tech.src} alt={tech.alt} size={50} />,
+          )
+        }
+      </div>
+    </BentoSpace>
+    <BentoSpace
+      title="Learning"
+      col={{ start: 3, end: 4 }}
+      row={{ start: 1, end: 2 }}
+    >
+      <div class="flex">
+        {
+          stack.map(
+            (tech) =>
+              tech.learning &&
+              !tech.tool && <Svg src={tech.src} alt={tech.alt} size={50} />,
+          )
+        }
+      </div>
+    </BentoSpace>
+    <BentoSpace
+      title="Learning Tools"
+      col={{ start: 1, end: 2 }}
+      row={{ start: 2, end: 3 }}
+    >
+      <div class="flex">
+        {
+          stack.map(
+            (tech) =>
+              tech.tool &&
+              tech.learning && <Svg src={tech.src} alt={tech.alt} size={50} />,
+          )
+        }
+      </div>
+    </BentoSpace>
+    <BentoSpace
+      title="Tools"
+      col={{ start: 2, end: 4 }}
+      row={{ start: 2, end: 3 }}
+    >
+      <div class="flex">
+        {
+          stack.map(
+            (tech) =>
+              tech.tool &&
+              !tech.learning && <Svg src={tech.src} alt={tech.alt} size={50} />,
+          )
+        }
+      </div>
+    </BentoSpace>
+  </BentoGrid>
+
+  <style>
+    section.techstack {
+      display: flex;
+      flex-direction: column;
+
+      .flex {
+        width: max-content;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        gap: 2rem;
+      }
+    }
+  </style>
+</section>

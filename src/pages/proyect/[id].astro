@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { proyects } from "@/data";
+import type { Proyect } from "@/types/data";
+
+const { id } = Astro.params;
+
+export const getStaticPaths = () => {
+  const ids = proyects.map((proyect) => ({ params: { id: proyect.id } }));
+  return ids;
+};
+
+const proyect = proyects.find((proyect) => proyect.id == id) as Proyect;
+---
+
+<Layout title={proyect.name}>
+  <h1 transition:name=`title-proyect-${id}`>{proyect.name}</h1>
+  <p transition:name=`description-proyect-${id}`>{proyect.description}</p>
+  <img
+    src={proyect.img}
+    alt={proyect.name}
+    transition:name=`img-proyect-${id}`
+  />
+</Layout>

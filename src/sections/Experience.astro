@@ -1,0 +1,69 @@
+---
+import Svg from "@/components/ui/Svg.astro";
+import TimeLine from "@/components/ui/TimeLine.astro";
+import TimeLineCard from "@/components/ui/TimeLineCard.astro";
+import { experience } from "@/data";
+---
+
+<section id="experience">
+  <h2>
+    <Svg src="/briefcase.svg" slot="before" alt="Work" size="40" />
+    Experience
+  </h2>
+  <TimeLine>
+    {
+      experience.map((xp) => (
+        <TimeLineCard>
+          <h3 class="company">{xp.company}</h3>
+          <span class="position">{xp.position}</span>
+          <span class="dates">
+            {xp.startDate} - {xp.endDate}
+          </span>
+          <p class="summary">{xp.summary}</p>
+          <ul class="highlights">
+            {xp.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </TimeLineCard>
+      ))
+    }
+  </TimeLine>
+</section>
+
+<style>
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .position {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .company {
+    margin: 0;
+  }
+
+  .dates {
+    font-size: 0.9rem;
+    color: rgb(var(--accent-light));
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .summary p {
+    margin-bottom: 1rem;
+    font-size: large;
+  }
+
+  .highlights {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+    font-size: medium;
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+
+---
+
+<div class="timeline-container">
+  <slot />
+</div>
+
+<style>
+  .timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 2rem;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-image: linear-gradient(
+        to bottom,
+        rgb(var(--accent-light)) 0%,
+        rgb(var(--accent-dark)) 60%,
+        rgb(var(--bg-color)) 100%
+      )
+      1;
+  }
+
+  html.light .line {
+    border-image: linear-gradient(
+        to bottom,
+        rgb(var(--accent-dark)) 0%,
+        rgb(var(--accent-light)) 60%,
+        rgb(var(--bg-color)) 100%
+      )
+      1;
+  }
+</style>

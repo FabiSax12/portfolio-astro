@@ -1,0 +1,48 @@
+---
+const now = new Date();
+const hour = now.toLocaleTimeString().split(":").slice(0, 2).join(":");
+---
+
+<footer transition:name="footer-main">
+  <div class="info">
+    <span>Made with ❤ in 🇨🇷</span>
+    <span>Original Design</span>
+  </div>
+  <div class="copyright">
+    <span
+      >Built with ASTRO – <a href="https://github.com/FabiSax12" target="_blank"
+        >View Repo</a
+      ></span
+    >
+    <span
+      >Icons by <a href="https://svgrepo.com" target="_blank">svgrepo.com</a
+      ></span
+    >
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    max-width: 800px;
+    padding-top: 2rem;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--fg-color-alt);
+
+    .info,
+    .copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+</style>

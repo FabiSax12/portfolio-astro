@@ -1,0 +1,46 @@
+---
+interface Props {
+  col: {
+    start: number;
+    end: number;
+  };
+  row: {
+    start: number;
+    end: number;
+  };
+
+  title?: string;
+}
+
+const { col, row, title } = Astro.props;
+---
+
+<div class="bento-space">
+  {title && <h5>{title}</h5>}
+  <slot />
+</div>
+
+<style
+  define:vars={{
+    colStart: col.start,
+    colEnd: col.end,
+    rowStart: row.start,
+    rowEnd: row.end,
+  }}
+>
+  .bento-space {
+    grid-column: var(--colStart) / var(--colEnd);
+    grid-row: var(--rowStart) / var(--rowEnd);
+
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(var(--complementary));
+    background-color: rgba(var(--complementary), 0.1);
+
+    h5 {
+      margin: 0 0 1rem 0;
+    }
+  }
+</style>

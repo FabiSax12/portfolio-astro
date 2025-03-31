@@ -1,0 +1,59 @@
+---
+import AcademicStudy from "../components/AcademicStudy.astro";
+import TimeLine from "../components/ui/TimeLine.astro";
+import Svg from "../components/ui/Svg.astro";
+import { studies } from "@/data";
+import TimeLineCard from "@/components/ui/TimeLineCard.astro";
+---
+
+<section id="studies">
+  <h2>
+    <Svg
+      src="/graduation-cap.svg"
+      slot="before"
+      alt="Graduation cap"
+      size="50"
+    />
+    Studies
+  </h2>
+  <TimeLine>
+    {
+      studies.map((study) => (
+        <TimeLineCard>
+          <h3 class="title">{study.title}</h3>
+          <span class="institution">
+            {study.institution}, {study.location}
+          </span>
+          <p class="years">
+            {study.startYear} - {study.endYear}
+          </p>
+          <p class="description">{study.description}</p>
+        </TimeLineCard>
+      ))
+    }
+  </TimeLine>
+</section>
+
+<style>
+  .title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .institution {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  .years {
+    margin: 0;
+    font-size: medium;
+    color: rgb(var(--accent-light));
+  }
+  .description {
+    font-size: large;
+    margin-bottom: 1rem;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  institution: string;
+  location: string;
+  startYear: string;
+  endYear: string;
+  description: string;
+}
+
+const { title, institution, location, startYear, endYear, description } =
+  Astro.props;
+---
+
+<div class="academic-study">
+  <div class="timeline-point"></div>
+  <div class="content">
+    <h3>{title}</h3>
+    <p class="institution">{institution}, {location}</p>
+    <p class="years">{startYear} - {endYear}</p>
+    <p class="description">{description}</p>
+  </div>
+</div>
+
+<style>
+  .academic-study {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .timeline-point {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(var(--accent-light));
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+  }
+
+  .content {
+    margin-left: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 5px var(--shadow); */
+    color: rgb(var(--fg-color));
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  }
+</style>

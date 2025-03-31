@@ -1,0 +1,53 @@
+---
+import HeaderButton from "./HeaderButton.astro";
+import ToggleTheme from "./ToggleTheme.tsx";
+
+interface Props {}
+
+const {} = Astro.props;
+
+const cookie = Astro.request.headers.get("cookie");
+---
+
+<header>
+  <nav>
+    <ul>
+      <HeaderButton label="Home" href="/" />
+      <HeaderButton label="Proyects" href="#proyects" />
+      <HeaderButton label="Experience" href="#experience" />
+      <HeaderButton label="Studies" href="#studies" />
+      <HeaderButton label="Tech Stack" href="#techstack" />
+    </ul>
+
+    <ToggleTheme client:load cookie={cookie} />
+  </nav>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* backdrop-filter: blur(10px); */
+    background-color: rgb(var(--bg-color));
+    z-index: 1000;
+  }
+
+  nav {
+    max-width: 50%;
+    margin: auto;
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  ul {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    font-size: medium;
+  }
+</style>

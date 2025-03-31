@@ -1,0 +1,71 @@
+---
+import { parse } from "node-html-parser";
+
+export interface Props {
+  src: string;
+  alt: string;
+  fill?: string;
+  size?: string | number;
+  styles?: {
+    svg?: string;
+    path?: {
+      fill?: string;
+    };
+  };
+}
+
+const { src, alt, fill, size = 20, styles = {}, ...attributes } = Astro.props;
+
+const pathFill = styles.path?.fill;
+
+const files = import.meta.glob<string>("/public/**/*.svg", {
+  query: "?raw",
+});
+
+const getSVG = async (src: string) => {
+  const filePath = `/public${src}`;
+
+  if (!(filePath in files)) {
+    throw new Error(`${filePath} not found`);
+  }
+
+  const { default: file } = (await files[filePath]()) as unknown as {
+    default: string;
+  };
+  const root = parse(file);
+
+  const svg = root.querySelector("svg") as unknown as SVGElement;
+
+  if (fill) {
+    svg.setAttribute("fill", fill);
+
+    svg.querySelectorAll("path").forEach((path) => {
+      path.setAttribute("fill", fill);
+    });
+
+    svg.querySelectorAll("circle").forEach((circle) => {
+      circle.setAttribute("fill", fill);
+    });
+  }
+
+  const { attributes, innerHTML } = svg;
+
+  return {
+    attributes,
+    innerHTML,
+  };
+};
+
+const { attributes: baseAttributes, innerHTML } = await getSVG(src);
+const svgAttributes = { ...baseAttributes, ...attributes };
+const iconSize = size + "px";
+---
+
+<svg {...svgAttributes} set:html={innerHTML} />
+
+<style define:vars={{ iconSize }}>
+  svg {
+    width: var(--iconSize);
+    height: var(--iconSize);
+  }
+</style>

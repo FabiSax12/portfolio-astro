@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "EasyTec",
+    "description": "EasyTec is a web application created for the management of time and tasks, focused on the productivity of the students of the Tecnologico de Costa Rica.",
+    "img": "https://placehold.co/200x112?text=Hello\nWorld",
+    "url": "/proyect/1",
+    "repo": "https://github.com/FabiSax12/easy-tec_proyect",
+    "demo": "https://easy-tec.vercel.app",
+    "keywords": [
+      "NextJs",
+      "NodeJs",
+      "PostgreSQL",
+      "NextAuth",
+      "NextUI"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "PassMan",
+    "description": "Password manager, it allows you to store your passwords in a secure way.",
+    "img": "https://placehold.co/200x112?text=Hello\nWorld",
+    "url": "https://passman.vercel.app",
+    "repo": "https://github.com/FabiSax12/passman",
+    "keywords": [
+      "React",
+      "NodeJS",
+      "MongoDB",
+      "Nest",
+      "JWT",
+      "Monorepo"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Excel Clone",
+    "description": "Excel clone, it allows you to create and edit spreadsheets.",
+    "img": "https://placehold.co/200x112?text=Hello\nWorld",
+    "url": "https://excel.vercel.app",
+    "repo": "https://github.com/FabiSax12/exel-clone",
+    "keywords": [
+      "TypeScript",
+      "Vanilla",
+      "Excersice"
+    ]
+  }
+]

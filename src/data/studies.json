@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Computer Science Engineering",
+    "institution": "Tecnológico de Costa Rica",
+    "location": "San Carlos, Costa Rica",
+    "startYear": "2024",
+    "endYear": "in progress",
+    "description": "Focused on software development, proyect managment, soft skills and team work."
+  },
+  {
+    "title": "Electrical technician",
+    "institution": "CTP Nataniel Arias Murillo",
+    "location": "San Carlos, Costa Rica",
+    "startYear": "2021",
+    "endYear": "2023",
+    "description": "Industrial and residential electricity. Electronics, arduino, hardware and automation"
+  },
+  {
+    "title": "High School Diploma",
+    "institution": "CTP Nataniel Arias Murillo",
+    "location": "San Carlos, Costa Rica",
+    "startYear": "2018",
+    "endYear": "2023",
+    "description": ""
+  }
+]

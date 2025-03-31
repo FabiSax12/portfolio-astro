@@ -1,0 +1,27 @@
+---
+import Card from "@/components/ui/Card.astro";
+import { proyects } from "@/data";
+---
+
+<section id="proyects" class="proyects">
+  <h2>{"</>"} Proyects</h2>
+  {
+    proyects.map((proyect) => (
+      <Card
+        id={proyect.id}
+        title={proyect.name}
+        body={proyect.description}
+        href={`/proyect/${proyect.id}`}
+        img={proyect.img}
+      />
+    ))
+  }
+</section>
+
+<style>
+  section.proyects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>

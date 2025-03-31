@@ -1,0 +1,19 @@
+[
+  {
+    "text": "LinkedIn",
+    "icon": "/linkedin.svg",
+    "href": "https://www.linkedin.com/in/fabian-va",
+    "target": "_blank"
+  },
+  {
+    "text": "GitHub",
+    "icon": "/github.svg",
+    "href": "https://www.github.com/FabiSax12",
+    "target": "_blank"
+  },
+  {
+    "text": "Email",
+    "icon": "/email.svg",
+    "href": "mailto:fabidev18@gmail.com"
+  }
+]
