@@ -1,12 +1,6 @@
 ---
 import HeaderButton from "./HeaderButton.astro";
-import ToggleTheme from "./ToggleTheme.tsx";
-
-interface Props {}
-
-const {} = Astro.props;
-
-const cookie = Astro.request.headers.get("cookie");
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
@@ -18,8 +12,7 @@ const cookie = Astro.request.headers.get("cookie");
       <HeaderButton label="Studies" href="#studies" />
       <HeaderButton label="Tech Stack" href="#techstack" />
     </ul>
-
-    <ToggleTheme client:load cookie={cookie} />
+    <ThemeToggle />
   </nav>
 </header>
 
@@ -30,6 +23,7 @@ const cookie = Astro.request.headers.get("cookie");
     left: 0;
     /* backdrop-filter: blur(10px); */
     background-color: rgb(var(--bg-color));
+    padding: 10px 0 10px 0;
     z-index: 1000;
   }
 

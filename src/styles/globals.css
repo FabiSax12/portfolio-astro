@@ -1,5 +1,31 @@
+@import "tailwindcss";
+
 :root {
-  /* Dark Mode */
+  --bg-color: 240, 240, 240;
+  --bg-color-alt: 176, 176, 176;
+  --fg-color: 19, 21, 26;
+  --fg-color-alt: 35, 38, 45;
+
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  --accent: 43, 73, 207;
+  --accent-light: 90, 115, 230;
+  --accent-dark: 26, 52, 142;
+  --complementary: 207, 177, 43;
+  --complementary-light: 230, 205, 90;
+  --complementary-dark: 142, 116, 26;
+
+  --accent-gradient: linear-gradient(45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%);
+  --complementary-gradient: linear-gradient(45deg,
+      rgb(var(--complementary-dark)),
+      rgb(var(--complementary)) 30%,
+      rgb(var(--complementary-light)) 60%);
+}
+
+html.dark {
   --bg-color: 19, 21, 26;
   --bg-color-alt: 35, 38, 45;
   --fg-color: 240, 240, 240;
@@ -13,24 +39,11 @@
   --complementary: 190, 64, 64;
   --complementary-light: 238, 175, 175;
   --complementary-dark: 128, 0, 0;
-
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--accent)),
-    rgb(var(--accent-light)) 30%,
-    white 60%
-  );
-  --complementary-gradient: linear-gradient(
-    45deg,
-    rgb(var(--complementary-dark)),
-    rgb(var(--complementary)) 30%,
-    rgb(var(--complementary-light)) 60%
-  );
 }
 
 html {
   font-family: system-ui, sans-serif;
-  background: rgb(var(--bg-color));
+  background-color: rgb(var(--bg-color));
   color: rgb(var(--fg-color));
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--accent)) rgb(var(--bg-color));
@@ -40,38 +53,21 @@ html {
 @media (prefers-color-scheme: light) {
   :root {
     /* Light Mode */
-  --bg-color: 240, 240, 240;
-  --bg-color-alt: 176, 176, 176;
-  --fg-color: 19, 21, 26;
-  --fg-color-alt: 35, 38, 45;
+    --bg-color: 240, 240, 240;
+    --bg-color-alt: 176, 176, 176;
+    --fg-color: 19, 21, 26;
+    --fg-color-alt: 35, 38, 45;
 
-  --shadow: rgba(0, 0, 0, 0.1);
+    --shadow: rgba(0, 0, 0, 0.1);
 
-  --accent: 43, 73, 207;
-  --accent-light: 90, 115, 230;
-  --accent-dark: 26, 52, 142;
-  --complementary: 207, 177, 43;
-  --complementary-light: 230, 205, 90;
-  --complementary-dark: 142, 116, 26;
+    --accent: 43, 73, 207;
+    --accent-light: 90, 115, 230;
+    --accent-dark: 26, 52, 142;
+    --complementary: 207, 177, 43;
+    --complementary-light: 230, 205, 90;
+    --complementary-dark: 142, 116, 26;
 
   }
-}
-
-html.light {
-  /* Light Mode */
-  --bg-color: 240, 240, 240;
-  --bg-color-alt: 176, 176, 176;
-  --fg-color: 19, 21, 26;
-  --fg-color-alt: 35, 38, 45;
-
-  --shadow: rgba(0, 0, 0, 0.1);
-
-  --accent: 43, 73, 207;
-  --accent-light: 90, 115, 230;
-  --accent-dark: 26, 52, 142;
-  --complementary: 207, 177, 43;
-  --complementary-light: 230, 205, 90;
-  --complementary-dark: 142, 116, 26;
 }
 
 * {
@@ -94,6 +90,7 @@ h1 {
   text-align: center;
   margin-bottom: 1em;
 }
+
 .text-gradient {
   background-image: var(--accent-gradient);
   -webkit-background-clip: text;
@@ -107,6 +104,7 @@ h1 {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(180deg);
   }
@@ -116,6 +114,7 @@ h1 {
   from {
     transform: rotate(180deg);
   }
+
   to {
     transform: rotate(0deg);
   }
